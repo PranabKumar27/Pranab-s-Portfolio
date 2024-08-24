@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font styles from googlefont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+
+
+    <style>
+        #navbar-heading,
+        #name,
+        #element {
+            font-family: "Quicksand", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: bold;
+            font-style: normal;
+
+        }
+
+        .instagram:hover {
+            background: linear-gradient(190deg, #820BF4, #F600CE, #F600CE, #F7BE00 100%);
+            /* padding: 1px; */
+            /* padding-left: 0.7px; */
+            /* padding-right: 0.7px; */
+            border-radius: 5px;
+
+        }
+
+        .hover\:scale-up:hover {
+            transform: scale(1.1);
+            /* Slightly scale up the SVG */
+            transition: transform 10s ease-in infinite;
+            /* Smooth transition */
+        }
+
+        /* Keyframes for pulse animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .pulse-animation:hover {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0) rotate(0);
+            }
+
+            20% {
+                transform: translateX(-2px) rotate(-2deg);
+            }
+
+            40% {
+                transform: translateX(2px) rotate(2deg);
+            }
+
+            60% {
+                transform: translateX(-2px) rotate(-2deg);
+            }
+
+            80% {
+                transform: translateX(2px) rotate(2deg);
+            }
+
+            100% {
+                transform: translateX(0) rotate(0);
+            }
+        }
+
+        .hover\:vibrate:hover {
+            animation: shake 0.6s ease-in-out infinite;
+            /* Apply shake animation on hover */
+        }
+
+        .hidden-navbar {
+            transform: translateY(-500%);
+            transition: transform 1s ease;
+        }
+
+        .show-navbar {
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+    </style>
+
+</head>
+
+<body class="bg-[#111] text-white">
+    <section class=" relative flex flex-col justify-between min-h-screen">
+        <header id="navbar"
+            class="fixed w-full z-20 bg-transparent  flex items-center justify-between m-4 md:mt-5   text-[#CF7D2B] transition-transform ease-in-out  show-navbar">
+
+            <h1 class=" mt-1 md:mt-3 text-4xl font-header md:text-4.5xl lg:text-5xl" id="navbar-heading"></h1>
+            <div class=" flex gap-8 mr-8 md:mr-10 mt-3 text-[#c3b9b0] ">
+                <svg xmlns=" https://www.linkedin.com/in/pranabkumar27/" viewBox="0 0 24 24" fill="#e56e06"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun cursor-pointer w-6 h-6  md:w-8
+                md:h-8 lg:w-10 lg:h-10 hover:scale-up ">
+                    <circle cx=" 12" cy="12" r="5">
+                    </circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" stroke="white" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="hidden w-6 h-6  md:w-8
+                    md:h-8 lg:w-10 lg:h-10">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <a href="tel:9777552064" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#2284F7" stroke="#fff"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone text-black hover:vibrate w-6 h-6  md:w-8
+                        md:h-8 lg:w-10 lg:h-10">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                </a>
+
+                <a href="https://wa.me/9777552064" target="_blank">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp" class="svg-inline--fa fa-whatsapp fa-w-14 cursor-pointer w-6 h-6  md:w-8
+                    md:h-8 lg:w-10 lg:h-10 pulse-animation" role=" img" xmlns="http://www.w3.org/2000/svg"
+                        fill="#2EE864" stroke="white" stroke-width="2" viewBox="0 0 448 512">
+                        <path
+                            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+                        </path>
+                    </svg>
+                </a>
+
+
+
+            </div>
+        </header>
+        <video autoplay muted loop preload="auto" class="absolute inset-0 h-full w-full object-cover -z-10">
+            <source src="./assets/background/mainbackgroundfile.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="relative flex mt-10 justify-between">
+            <div id="photo-text" class="flex  mt-auto md:-ml-10  -ml-16 ">
+                <div class=" header-image  mt-auto md:ml-36  ml-12 ">
+                    <img class="lg:max-w-md lg:max-h-md md:max-w-xs max-w-56 " src="./assets/images/ProfilePicture.png"
+                        alt="">
+                </div>
+                <div class="header-text lg:ml-20  lg:mt-72 md:mt-48 md:ml-10 mt-28 ml-0 ">
+                    <h1 class="lg:text-5xl md:text-3xl text-2xl"> Hello, It's Me</h1>
+                    <h1 class="lg:text-6xl md:text-5xl text-3xl text-[#CF7D2B]"><span id="name"></span></h1>
+                    <h1 class="lg:text-5xl md:text-3xl text-2xl"> And I'm a <span id="element"
+                            class="text-[#40d7dc]"></span></h1>
+                </div>
+            </div>
+            <ul class="  lg:mr-12 md:mr-8 mr-2 mt-52 space-y-6 text-[#b0b2c3]  ">
+                <li>
+                    <a href="https://www.linkedin.com/in/pranabkumar27/" target="_blank">
+                        <svg class="w-7 hover:text-[#0A66C2]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/iamkumarpranab/" target="_blank">
+                        <svg class="w-7 instagram   hover:text-white" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/PranabKumar27" target="_blank">
+                        <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                            <path fill="currentColor"
+                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:pranabkumarsahoo27@gmail.com" target="_blank">
+                        <svg class="w-7 hover:text-yellow-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <button>Latest Course</button>
+    </section>
+
+    <h1 class="flex justify-start ml-40 ">
+        _________________________________________________________________________________________________________</h1>
+
+    <h1 class="flex justify-center text-4xl" id="inprogress"></h1>
+
+    <h1 class=" flex justify-end mr-40">
+        _________________________________________________________________________________________________________</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi eaque nesciunt consectetur corrupti numquam,
+        beatae dolore esse tempora voluptatum quas fuga similique molestiae saepe doloremque exercitationem quidem?
+        Reprehenderit nulla rem fugit vitae neque totam obcaecati. Optio pariatur, inventore perspiciatis unde ex
+        tempore. Sit laborum eveniet id, pariatur commodi, temporibus suscipit qui asperiores in eligendi ullam! Hic
+        unde vel, saepe voluptatem quisquam non nesciunt, facere architecto modi numquam, possimus at incidunt velit
+        consequatur necessitatibus sunt odio atque. Aut officiis consequuntur autem natus hic fuga eum aliquam beatae
+        fugiat, ipsa commodi ea esse? Deleniti eveniet libero est perferendis suscipit ea eligendi quibusdam debitis ex
+        quo laudantium veritatis, dolorem officia sunt necessitatibus cumque hic similique repudiandae dignissimos
+        reprehenderit sapiente quam. Animi nobis sapiente id, impedit omnis asperiores dolorem molestias veniam quo
+        nesciunt similique est expedita necessitatibus recusandae repellendus, quos voluptates quibusdam laudantium non
+        debitis magnam magni ratione! Expedita eveniet dolor nam amet, animi esse! Aspernatur ab Lorem ipsum, dolor sit
+        amet consectetur adipisicing elit. Debitis ratione quam, dignissimos praesentium non ipsam quaerat nihil dolores
+        eveniet placeat animi. Labore mollitia atque assumenda repellendus amet quisquam id ex! Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Totam est incidunt voluptatum, magnam atque consequuntur qui nemo esse
+        quibusdam quas fugiat, ex tempore dicta officiis quam dolore cumque aut nesciunt sed placeat explicabo eos
+        repellat eveniet fugit! Tempore quidem, neque velit esse dolores fugiat reiciendis repellat necessitatibus
+        aliquid. Sequi suscipit laboriosam eos tempore quos fuga iste ab, alias sit hic enim quam expedita omnis
+        voluptas maiores dolorem explicabo quibusdam fugiat repellat perspiciatis illo ratione. Impedit, sint. Alias
+        facere quis consequuntur soluta illo earum saepe voluptates quod cupiditate aliquam, voluptatibus, illum
+        necessitatibus impedit molestias dolorum ex officia fugit iure nobis corrupti ducimus asperiores deserunt,
+        veniam accusantium. Quae ullam in quidem. Ut vero commodi, pariatur saepe temporibus expedita. Id totam fuga
+        delectus possimus deleniti fugiat quae nostrum quod animi sequi pariatur blanditiis aspernatur, illum nobis
+        exercitationem repudiandae, quisquam qui molestiae doloremque optio voluptatibus obcaecati laudantium! Totam
+        iure, obcaecati porro natus tenetur laudantium expedita reiciendis, distinctio aperiam praesentium cumque itaque
+        magnam, deserunt quasi quae! Nostrum, autem impedit. Mollitia fugit, facilis tenetur error accusantium eum dicta
+        ipsam ut consectetur itaque eaque id est. Sed, quae! Libero molestias illum excepturi eveniet autem officia ut
+        hic recusandae voluptate, accusantium ab tempore soluta minima a quaerat alias expedita deleniti sint modi
+        exercitationem possimus ipsa quo. Corrupti, vitae accusantium excepturi nihil earum reprehenderit praesentium
+        voluptatem officia. Sequi, distinctio. Maxime adipisci fugiat deserunt voluptatibus quod iste ullam in quas.
+        Voluptatem, libero ullam quia eligendi mollitia sint dolorem magnam adipisci, optio porro enim. Consequuntur,
+        rerum placeat? Dolor at natus dignissimos! Tenetur reprehenderit aliquam, inventore deserunt dicta explicabo
+        asperiores earum nulla. Possimus, nemo beatae, laboriosam a eveniet iusto cum vitae necessitatibus placeat eaque
+        natus excepturi nihil, quisquam cumque accusamus inventore consectetur doloribus eligendi architecto deleniti
+        cupiditate? Ratione tenetur consectetur, sit nisi nam quibusdam delectus dicta repellat hic, sed, maxime
+        corporis illum suscipit ut officiis eum facilis ipsa. Facilis odit modi iusto culpa praesentium, iste magnam
+        aliquam minima omnis labore aliquid vitae veritatis, enim veniam repudiandae recusandae est sed minus fugiat
+        consequatur pariatur. Dolor, aut! Repellendus libero odio totam rem omnis veniam magnam quisquam, quae optio
+        veritatis voluptates id mollitia ipsum dignissimos culpa nobis aut vero eligendi minus sed et, laboriosam
+        accusamus? Quisquam odit natus quia rem, obcaecati perferendis quibusdam laborum. Corrupti laborum magnam
+        officia, eum dicta optio voluptate odio aliquam id enim quod nobis sunt veniam labore fugit vero similique
+        ratione nemo voluptatum assumenda maxime libero sit numquam? Iusto, ab perspiciatis?
+    </p>
+
+    <!-- Load library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer.', 'Frontend Developer.', 'Java Developer.', 'Full-Stack Developer.'],
+            typeSpeed: 100,
+            showCursor: true,
+            onComplete: function (self) {
+                // Hide the cursor after typing is completed
+                self.cursor.style.display = 'none';
+            }
+        });
+
+
+        var typed = new Typed('#name', {
+            strings: ['PRANAB KUMAR SAHOO.'],
+            typeSpeed: 10,
+            showCursor: true,
+            onComplete: function (self) {
+                // Hide the cursor after typing is completed
+                self.cursor.style.display = 'none';
+            }
+        });
+        var typed = new Typed('#inprogress', {
+            strings: ['IN PROGRESS...'],
+            typeSpeed: 300,
+            showCursor: true,
+            onComplete: function (self) {
+                // Hide the cursor after typing is completed
+                self.cursor.style.display = 'none';
+            }
+        });
+
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const heading = "Portfolio."; // Change this to the desired name
+            const headingElement = document.getElementById('navbar-heading');
+            const duration = 10000; // Duration in milliseconds (10 seconds)
+            const interval = 300; // Time between each character (in milliseconds)
+            const totalCharacters = heading.length;
+            const charactersPerSecond = totalCharacters / (duration / 1000);
+
+            let index = 0;
+
+            function typeLetter() {
+                if (index < totalCharacters) {
+                    headingElement.textContent += heading[index];
+                    index++;
+                    setTimeout(typeLetter, interval); // Delay between characters
+                }
+            }
+
+            typeLetter();
+        });
+    </script>
+
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        let lastScrollTop = 0;
+        let isScrolling;
+        let isNavbarVisible = true;
+        const navbarHeight = 100; // Height of the navbar in pixels
+
+        // Function to show the navbar
+        function showNavbar() {
+            navbar.classList.remove('hidden-navbar');
+            navbar.classList.add('show-navbar');
+            isNavbarVisible = true;
+        }
+
+        // Function to hide the navbar
+        function hideNavbar() {
+            navbar.classList.remove('show-navbar');
+            navbar.classList.add('hidden-navbar');
+            isNavbarVisible = false;
+        }
+
+        // Handle scroll event to hide or show the navbar
+        window.addEventListener('scroll', () => {
+            if (isScrolling) clearTimeout(isScrolling);
+            isScrolling = setTimeout(() => {
+                const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (currentScrollTop > lastScrollTop) {
+                    // Scrolling down
+                    hideNavbar();
+                } else {
+                    // Scrolling up
+                    if (currentScrollTop < navbarHeight) {
+                        // Show navbar only if scrolled within navbarHeight from the top
+                        showNavbar();
+                    }
+                }
+
+                lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+            }, 100);
+        });
+
+        // Show navbar when cursor is near the top
+        document.addEventListener('mousemove', (event) => {
+            if (event.clientY < 50 && !isNavbarVisible) {
+                showNavbar();
+            }
+        });
+
+        // Hide navbar when cursor leaves the window
+        document.addEventListener('mouseleave', () => {
+            if (window.pageYOffset > navbarHeight) {
+                hideNavbar();
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
