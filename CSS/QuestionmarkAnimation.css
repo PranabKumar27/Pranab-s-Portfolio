@@ -1,0 +1,14 @@
+@keyframes popUpAndDown {
+    0%, 100% {
+        transform: translateY(0); /* Starting and ending position */
+    }
+    50% {
+        transform: translateY(-7px); /* Pop up slightly */
+    }
+}
+.question-mark {
+    display: inline-block;
+    animation: popUpAndDown 1s ease-in-out infinite; 
+    font-size: 2.3rem;
+    color: #c92918;
+}

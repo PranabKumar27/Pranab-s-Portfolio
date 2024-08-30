@@ -9,17 +9,86 @@
     <link rel="stylesheet" href="output.css">
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Toogle Element Icons -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="./CSS/toggleCSS.css">
+
+
+
     <!-- font styles from googlefont -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
 
+    <!-- Skill Section Style Sheet -->
+    <link rel="stylesheet" href="./CSS/skillSection.css">
+
+
+    <!-- Header Below Line -->
+    <link rel="stylesheet" href="./CSS/headerBelowLine.css">
+
+    <!-- Question Mark -->
+    <link rel="stylesheet" href="./CSS/QuestionmarkAnimation.css">
+
+
+    <!-- Contact Me Style -->
+    <link rel="stylesheet" href="./CSS/ContactMe.css">
+
+    <link rel="stylesheet" href="./CSS/BeforePage.css">
+
+    <link rel="stylesheet" href="./CSS/submit-button.css">
+
+    <!-- Swimato header Style -->
+
+    <link rel="stylesheet" href="./CSS/SWIMATOHeadingStyle.css">
 
     <style>
+        /* developer purpose */
+
+        .slide-out {
+            animation: slideOut 0.5s forwards;
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s forwards;
+        }
+
+        @keyframes slideOut {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
         #navbar-heading,
         #name,
-        #element {
+        #element,
+        #skill-header,
+        #about-header,
+        #project-header,
+        #resume-header,
+        #education-header,
+        .whoAMI {
             font-family: "Quicksand", sans-serif;
             font-optical-sizing: auto;
             font-weight: bold;
@@ -105,230 +174,654 @@
             transform: translateY(0);
             transition: transform 0.3s ease;
         }
+
+        .button {
+            transition: transform 0.3s ease;
+            transform-origin: left center;
+            /* Set origin to left side */
+        }
+
+        .hireme:hover {
+            transform: scaleX(1.1);
+
+        }
+
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .hireme:hover .arrow {
+            transform: translateX(10px);
+
+        }
+
+        .header-image {
+            flex-basis: 35%;
+            opacity: 0;
+            animation: slideRight 1s ease forwards;
+        }
+
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        #centerDiv {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            transform: translate(-50%, -50%);
+            transition: transform 0.5s ease, background-color 0.5s ease;
+            z-index: 10;
+            background-color: #1E40AF;
+            border-radius: 9999px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        .expanded #centerDiv {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: red;
+            border: 1px solid #1E40AF;
+
+
+        }
+
+        .element {
+            position: absolute;
+            opacity: 0;
+            transform: scale(0);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            z-index: 5;
+        }
+
+        .expanded .element {
+            opacity: 1;
+            transform: scale(2);
+        }
+
+        .blurred {
+            filter: blur(8px);
+            pointer-events: none;
+        }
+
+        .fa-icon {
+            font-size: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .fa-icon {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .fa-icon {
+                font-size: 1rem;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
     </style>
 
 </head>
 
-<body class="bg-[#111] text-white">
-    <section class=" flex flex-col w-full h-full justify-between ">
-        <header id="navbar"
-            class="absolute w-full z-20 bg-transparent  flex items-center justify-between m-4 md:mt-5   text-[#CF7D2B] transition-transform ease-in-out show-navbar">
+<body class="bg-black text-white">
 
-            <h1 class=" mt-1 md:mt-3 text-4xl font-header md:text-4.5xl lg:text-5xl" id="navbar-heading"></h1>
-            <div class=" flex gap-8 mr-8 md:mr-10 mt-3 text-[#c3b9b0] ">
-                <svg xmlns=" https://www.linkedin.com/in/pranabkumar27/" viewBox="0 0 24 24" fill="#e56e06"
-                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun cursor-pointer w-6 h-6  md:w-8
-                md:h-8 lg:w-10 lg:h-10 hover:scale-up ">
-                    <circle cx=" 12" cy="12" r="5">
-                    </circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" stroke="white" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" class="hidden w-6 h-6  md:w-8
-                    md:h-8 lg:w-10 lg:h-10">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-                <a href="tel:9777552064" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#2284F7" stroke="#fff"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone text-black hover:vibrate w-6 h-6  md:w-8
-                        md:h-8 lg:w-10 lg:h-10">
-                        <path
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                        </path>
-                    </svg>
-                </a>
-
-                <a href="https://wa.me/9777552064" target="_blank">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp" class="svg-inline--fa fa-whatsapp fa-w-14 cursor-pointer w-6 h-6  md:w-8
-                    md:h-8 lg:w-10 lg:h-10 pulse-animation" role=" img" xmlns="http://www.w3.org/2000/svg"
-                        fill="#2EE864" stroke="white" stroke-width="2" viewBox="0 0 448 512">
-                        <path
-                            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
-                        </path>
-                    </svg>
-                </a>
-
-
-
+    <div class="mt-64" id="load-screen-container">
+        <div id="loading-screen">
+            <div class="container">
+                <div class="upper">PORTFOLIO.</div>
+                <div class="lower">PORTFOLIO.</div>
+                <div class="inside">𝕄𝔸𝔻𝔼 𝔹𝕐 ℙℝ𝔸ℕ𝔸𝔹.</div>
             </div>
-        </header>
-        <video autoplay muted loop preload="auto" class="absolute  h-full w-full  object-cover -z-10">
-            <source src="./assets/background/mainbackgroundfile.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-        <div class="relative flex mt-10 justify-between">
-            <div id="photo-text" class="flex  mt-auto md:-ml-10  -ml-16 ">
-                <div class=" header-image  mt-auto md:ml-36  ml-12 ">
-                    <img class="lg:max-w-md lg:max-h-md md:max-w-xs max-w-56 " src="./assets/images/ProfilePicture.png"
-                        alt="">
-                </div>
-                <div class="header-text lg:ml-20  lg:mt-72 md:mt-48 md:ml-10 mt-28 ml-0 ">
-                    <h1 class="lg:text-5xl md:text-3xl text-2xl"> Hello, It's Me</h1>
-                    <h1 class="lg:text-6xl md:text-5xl text-3xl text-[#CF7D2B]"><span id="name"></span></h1>
-                    <h1 class="lg:text-5xl md:text-3xl text-2xl"> And I'm a <span id="element"
-                            class="text-[#40d7dc]"></span></h1>
-                </div>
-            </div>
-            <ul class="  lg:mr-12 md:mr-8 mr-2 mt-52 space-y-6 text-[#b0b2c3]  ">
-                <li>
-                    <a href="https://www.linkedin.com/in/pranabkumar27/" target="_blank">
-                        <svg class="w-7 hover:text-[#0A66C2]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                            <path fill="currentColor"
-                                d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/iamkumarpranab/" target="_blank">
-                        <svg class="w-7 instagram   hover:text-white" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 448 512">
-                            <path fill="currentColor"
-                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/PranabKumar27" target="_blank">
-                        <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                            <path fill="currentColor"
-                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:pranabkumarsahoo27@gmail.com" target="_blank">
-                        <svg class="w-7 hover:text-yellow-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                            <path fill="currentColor"
-                                d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
-                        </svg>
-                    </a>
-                </li>
-            </ul>
         </div>
-        <button>Latest Course</button>
-    </section>
+    </div>
 
 
-    <!-- Load library from the CDN -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <div id="main-content" style="display: none;">
+        <section class=" flex flex-col w-full h-au justify-between " id="content" id="homesection">
+            <header id="navbar"
+                class="fixed w-full z-20 bg-transparent  flex items-center justify-between m-4 md:mt-5  transition-transform ease-in-out show-navbar">
 
-    <!-- Setup and start animation! -->
-    <script>
-        var typed = new Typed('#element', {
-            strings: ['Web Developer.', 'Frontend Developer.', 'Java Developer.', 'Full-Stack Developer.'],
-            typeSpeed: 100,
-            showCursor: true,
-            onComplete: function (self) {
-                // Hide the cursor after typing is completed
-                self.cursor.style.display = 'none';
+                <h1 class=" mt-1 md:mt-3 text-4xl   md:text-4.5xl lg:text-5xl text-[#c92918]" id="navbar-heading">
+                </h1>
+                <div class=" flex gap-8 mr-8 md:mr-10 mt-3 text-[#c3b9b0] ">
+
+
+                    <a href="tel:9777552064" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#2284F7" stroke="#fff"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone text-black hover:vibrate w-6 h-6  md:w-8
+                        md:h-8 lg:w-10 lg:h-10">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                    </a>
+
+                    <a href="https://wa.me/9777552064" target="_blank">
+                        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="whatsapp" class="svg-inline--fa fa-whatsapp fa-w-14 cursor-pointer w-6 h-6  md:w-8
+                    md:h-8 lg:w-10 lg:h-10 pulse-animation" role=" img" xmlns="http://www.w3.org/2000/svg"
+                            fill="#2EE864" stroke="white" stroke-width="2" viewBox="0 0 448 512">
+                            <path
+                                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+                            </path>
+                        </svg>
+                    </a>
+
+
+
+                </div>
+            </header>
+            <video autoplay muted loop preload="auto" class="absolute  h-full w-full  object-cover -z-10">
+                <source src="./assets/background/mainbackgroundfile.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="relative flex mt-10 justify-between">
+                <div id="photo-text" class="flex  mt-auto md:-ml-10  -ml-16 ">
+                    <div class=" header-image  mt-auto md:ml-36  ml-12 ">
+                        <img class="lg:max-w-md lg:max-h-md md:max-w-xs max-w-56 "
+                            src="./assets/images/ProfilePicture.png" alt="">
+                    </div>
+                    <div>
+                        <div class="header-text lg:ml-20  lg:mt-72 md:mt-48 md:ml-10 mt-28 ml-0 ">
+                            <h1 class="lg:text-5xl md:text-3xl text-2xl"> 👋Hello, It's Me</h1>
+                            <h1 class="lg:text-6xl md:text-5xl text-3xl text-[#c92918]"><span id="name"></span></h1>
+                            <h1 class="lg:text-5xl md:text-3xl text-2xl"> And I'm a <span id="rotating-text"
+                                    class="text-[#1542d4] font-bold">Java Developer</span></h1>
+                        </div>
+                        <div class="flex gap-4 mt-4 md:ml-10 lg:ml-20">
+                            <button id="triggerButton"
+                                class="hireme flex items-center px-4 py-2 bg-[#c92918] text-white font-semibold rounded-lg shadow-md hover:bg-[#ff4646]">
+                                <span class="flex items-center mb-1 ">More</span>
+                                <svg class="arrow w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7">
+                                    </path>
+                                </svg>
+                            </button></a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="  lg:mr-12 md:mr-8 mr-2 mt-52 space-y-6 text-[#b0b2c3]  ">
+                    <li>
+                        <a href="https://www.linkedin.com/in/pranabkumar27/" target="_blank">
+                            <svg class="w-7 hover:text-[#0A66C2]" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512">
+                                <path fill="currentColor"
+                                    d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/iamkumarpranab/" target="_blank">
+                            <svg class="w-7 instagram   hover:text-white" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512">
+                                <path fill="currentColor"
+                                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/PranabKumar27" target="_blank">
+                            <svg class="w-7 hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                                <path fill="currentColor"
+                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:pranabkumarsahoo27@gmail.com" target="_blank">
+                            <svg class="w-7 hover:text-yellow-300" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512">
+                                <path fill="currentColor"
+                                    d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <div id="centerDiv" class="w-16 h-16 flex items-center justify-center cursor-pointer relative">
+
+            <i class="fa-solid fa-location-dot"></i> <!-- Main icon -->
+            <!-- Surrounding Elements -->
+            <div id="elements" class="absolute inset-0 flex items-center justify-center text-black">
+                <a href="#homesection"
+                    class="element w-12 h-12 bg-[#c92918] rounded-full flex items-center justify-center " data-info="1">
+                    <i class="fas fa-home "></i> <!-- Project icon -->
+                </a>
+                <a href="#section1"
+                    class="element w-12 h-12 bg-[#c92918] rounded-full flex items-center justify-center text-black"
+                    data-info="1">
+                    <i class="fas fa-project-diagram fa-icon"></i> <!-- Project icon -->
+                </a>
+                <a href="#section2"
+                    class="element w-12 h-12 bg-[#c92918] rounded-full flex items-center justify-center " data-info="2">
+                    <i class="fas fa-code fa-icon"></i> <!-- Skill icon -->
+                </a>
+                <a href="#section3"
+                    class="element w-12 h-12 bg-[#c92918] rounded-full flex items-center justify-center " data-info="3">
+                    <i class="fas fa-user fa-icon"></i> <!-- About icon -->
+                </a>
+                <a href="#section5"
+                    class="element w-12 h-12 bg-[#c92918] rounded-full flex items-center justify-center " data-info="5">
+                    <i class="fas fa-graduation-cap fa-icon"></i> <!-- Education icon -->
+                </a>
+                <a href="#section6"
+                    class="element w-12 h-12 bg-[#c92918] rounded-full flex items-center justify-center " data-info="5">
+                    <i class="fas fa-graduation-cap fa-icon"></i> <!-- Education icon -->
+                </a>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <div id="toggleButton">
+            <div class="button">
+                <a href="#">Travel Pages</a>
+            </div>
+        </div>
+
+
+        <!-- Sections to scroll to -->
+        <section id="section3" class="h-full bg-black  mt-24 mb-24">
+            <div class="headerPages-line">
+                <h1 class="flex justify-center mt-1 md:mt-3 text-4xl  md:text-4.5xl lg:text-5xl text-[#c92918] "
+                    id="about-header">About Section.</h1>
+                <div class="w-1/2 h-1 bg-blue-700 mt-2 line mb-24"></div>
+
+                <div class="w-full max-w-4xl mx-auto flex flex-col md:flex-row">
+                    <!-- Image Div -->
+                    <div class="flex-1 mb-4 md:mb-0  ">
+                        <img src="./assets/images/aboutpageGIF.gif" alt="Sample Image"
+                            class="w-full h-auto object-cover rounded-lg md:w-auto md:h-auto lg:w-full lg:h-full">
+                    </div>
+
+                    <!-- Content Div -->
+                    <div
+                        class="flex-1 flex flex-col justify-center p-4 text-white rounded-lg shadow-md md:self-auto self-center">
+                        <div>
+                            <h2 class="text-3xl font-extraboldbold mb-2 text-center md:text-left whoAMI text-[#c92918]">
+                                WHO
+                                AM
+                                I
+                                <span class="text-3xl">...</span><span class="question-mark">?</span>
+                            </h2>
+                            <p class="text-center md:text-left whoAMI">
+                                My name is <span class="text-lg text-blue-600">Pranab Kumar Sahoo.</span>
+                                <span class="hover:bg-yellow-500 hover:text-black">
+                                    I am a
+                                    professional and enthusiastic programmer
+                                    in my daily
+                                    life. I am a quick learner with a self-learning attitude. I love to learn and
+                                    explore
+                                    new
+                                    technologies
+                                    and am passionate about problem-solving. I love almost all the stacks of web
+                                    application
+                                    development and
+                                    love to make the web more open to the world. My core skill is based on JavaScript
+                                    and I
+                                    love
+                                    to do most
+                                    of the things using JavaScript. I am available for any kind of job opportunity that
+                                    suits my
+                                    skills and
+                                    interests.
+                                </span>
+                            </p>
+                        </div>
+                        <div class="mt-4 flex justify-center md:justify-start space-x-4">
+                            <div class="submit-button py-2 px-4">
+                                <a href="mailto:pranabkumarsahoo27@gmail.com" target="_blank">HireME</a>
+                            </div>
+
+                            <div class="submit-button py-2 px-4">
+                                <a>RESUME</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section2" class="h-auto bg-black ">
+            <div class="headerPages-line">
+                <h1 class="flex justify-center mt-1 md:mt-3 text-4xl   md:text-4.5xl lg:text-5xl text-[#c92918] "
+                    id="skill-header">Skill Section.</h1>
+                <div class="w-1/2 h-1 bg-blue-700 mt-2 line"></div>
+            </div>
+            <div class="self-center whoAMI mt-16">
+                <h1 class="text-center md:ml-24 md:mr-24 md:text-2xl md:leading-normal"><span
+                        class="text-3xl question-mark">" </span>
+                    DRIVEN BY A PASSION
+                    FOR TECHNOLOGY
+                    AND INNOVATION, I
+                    LEVERAGE MY
+                    EXPERTISE IN
+                    JAVA,
+                    SPRING BOOT, REACT,
+                    AND TAILWIND CSS TO CRAFT SOPHISTICATED AND IMPACTFUL SOLUTIONS. MY ABILITY TO SEAMLESSLY INTEGRATE
+                    FRONTEND AND BACKEND TECHNOLOGIES ENSURES EXCEPTIONAL USER EXPERIENCES AND EFFICIENT PROJECT
+                    EXECUTION.
+                    I AM DEDICATED TO STAYING AHEAD OF INDUSTRY TRENDS, CONTINUOUSLY ENHANCING MY SKILLS TO DELIVER
+                    CUTTING-EDGE, HIGH-QUALITY RESULTS THAT EXCEED EXPECTATIONS. <span class="text-2xl question-mark">
+                        "</span> </h1>
+            </div>
+            <div class="flex items-center justify-center  h-auto mt-44 mb-16 bg-black">
+                <div class="scroll-main flex w-full justify-center bg-blue-600 rounded-3xl">
+                    <div class="scrolling-wrapper">
+                        <div class="scrolling-container" id="scrollingContainer">
+                            <div class="scrolling-item">
+                                <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/181_Java_logo_logos-512.png"
+                                    alt="Java">
+                                <p>Java</p>
+                            </div>
+                            <div class="scrolling-item">
+                                <img src="https://cdn.worldvectorlogo.com/logos/hibernate.svg" alt="Hibernate">
+                                <p>Hibernate</p>
+                            </div>
+                            <div class="scrolling-item">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spring_Boot.svg/640px-Spring_Boot.svg.png"
+                                    alt="Spring">
+                                <p>Spring</p>
+                            </div>
+                            <div class="scrolling-item">
+                                <img src="https://media.licdn.com/dms/image/D4D12AQEICFOK-z0akA/article-cover_image-shrink_720_1280/0/1656604745399?e=2147483647&v=beta&t=-Fjm5QYiJOJNzJ89xGv9VYPNxMNxqIX4jscMWXB6VaM"
+                                    alt="Spring Boot">
+                                <p>Spring Boot</p>
+                            </div>
+                            <div class="scrolling-item">
+                                <img src="https://www.freeiconspng.com/thumbs/sql-server-icon-png/sql-server-icon-png-29.png"
+                                    alt="SQL">
+                                <p>SQL</p>
+                            </div>
+                            <div class="scrolling-item">
+                                <img src="https://1000logos.net/wp-content/uploads/2020/08/MySQL-Logo.png" alt="MySql">
+                                <p>MySql</p>
+                            </div>
+                            <div class="scrolling-item">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/2048px-HTML5_Badge.svg.png"
+                                    alt="HTML">
+                                <p>HTML</p>
+                            </div>
+                            <div class="scrolling-item">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS">
+                                <p>CSS</p>
+                            </div>
+                            <div class="scrolling-item">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png"
+                                    alt="JavaScript">
+                                <p>JavaScript</p>
+                            </div>
+                            <div class="scrolling-item">
+                                <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png"
+                                    alt="React js">
+                                <p>React js</p>
+                            </div>
+                            <div class="scrolling-item">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/2560px-Bootstrap_logo.svg.png"
+                                    alt="Bootstrap">
+                                <p>Bootstrap</p>
+                            </div>
+                            <div class="scrolling-item">
+                                <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/tailwind-css-icon.png"
+                                    alt="Tailwind CSS">
+                                <p>Tailwind CSS</p>
+                            </div>
+                            <div class="scrolling-item">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/240px-Git_icon.svg.png"
+                                    alt="Git">
+                                <p>Git</p>
+                            </div>
+                            <div class="scrolling-item">
+                                <img src="https://www.nicepng.com/png/full/52-520535_free-files-github-github-icon-png-white.png"
+                                    alt="GitHub">
+                                <p>GitHub</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="./JS/skillSection.js"></script>
+        </section>
+
+        <section id="section1" class="h-auto bg-black">
+            <div class="headerPages-line">
+                <h1 class="flex justify-center mt-1 md:mt-3 text-4xl   md:text-4.5xl lg:text-5xl text-[#c92918] "
+                    id="project-header">Project Section.</h1>
+                <div class="w-1/2 h-1 bg-blue-700 mt-2 line"></div>
+                <div class="projectDetails mt-24">
+                    <div class="flex flex-col md:flex-row bg-black rounded-lg overflow-hidden shadow-lg mb-8">
+                        <div
+                            class="order-1 md:order-none md:w-2/3 grid place-items-center sm:w-full md:ml-48 w-full max-w-md mx-auto bg-red rounded-3xl">
+                            <img src="./assets/images/restaurant.avif" alt="Sample Image"
+                                class=" w-full h-auto bg-black rounded-xl shadow-[0px_4px_10px_rgb(247,0,32)] hover:shadow-[0px_4px_10px_rgb(2,13,232)]">
+                        </div>
+                        <div class="order-2 md:order-none md:w-2/3 p-6 flex flex-col justify-center md:ml-12">
+
+                            <h1 class="text-2xl font-bold mb-4 text-center md:text-left animate-character">SWIMATO APP
+                            </h1>
+
+                            <p class=" mb-4 text-center md:text-left">Introducing Swimato App- A sophisticated web
+                                platform developed with Spring MVC and JSP. It features distinct roles for Users,
+                                Hotels, and Admins, with MySQL managing data efficiently. HTML, CSS, and JavaScript
+                                ensure a sleek, responsive user experience.</p>
+                            <div class="w-30px h-20px flex justify-center md:justify-start">
+                                <div class="submit-button cursor-pointer">
+                                    <a>See Project &#128279</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section5" class="h-auto bg-black">
+            <div class="headerPages-line">
+                <h1 class="flex justify-center mt-1 md:mt-3 text-4xl   md:text-4.5xl lg:text-5xl text-[#c92918] "
+                    id="education-header">Education Section.</h1>
+                <div class="w-1/2 h-1 bg-blue-700 mt-2 line"></div>
+            </div>
+        </section>
+
+        <!-- contactMe Form JavaScript -->
+        <section class="bg-black py-8 px-4" id="section6">
+            <div class=" max-w-2xl mx-auto  p-6 rounded-lg shadow-md">
+                <div class="headerPages-line">
+                    <h1 class="flex justify-center mt-1 md:mt-3 text-4xl   md:text-4.5xl lg:text-5xl text-[#c92918] "
+                        id="skill-header">Contact ME!</h1>
+                    <div class="w-1/2 h-1 bg-blue-700 mt-2 line"></div>
+                </div>
+                <form method="post" name="contact-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="name" class="block text-white font-bold">Name</label>
+                            <input type="text" id="name" name="name" placeholder="eg. Pranab"
+                                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-white font-bold">Email</label>
+                            <input type="email" id="email" name="email" placeholder="eg. pranab@gmail.com"
+                                class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                required>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="phone" class="block text-white font-bold">Phone</label>
+                        <input type="text" id="phone" name="phone" placeholder="Phone Number"
+                            class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-white font-bold">Message</label>
+                        <textarea id="message" name="message" placeholder="Write Message"
+                            class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            rows="4" required></textarea>
+                    </div>
+                    <div class="text-center">
+
+                        <button type="submit">
+                            <div class="submit-button">
+                                <a>submit</a>
+                            </div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+
+        <script src="./JS/ContactMe.js"></script>
+
+
+        <script src="./JS/toggleJS.js"></script>
+
+        <!-- Load library from the CDN -->
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+        <script src="./JS/BeforePage.js"></script>
+
+        <!-- Setup and start animation! -->
+        <script>
+            const texts = ["Java Developer.", "React Developer.", "Fullstack Developer.", "Web Developer."];
+            const element = document.getElementById("rotating-text");
+            let currentIndex = 0;
+
+            function rotateText() {
+                element.classList.add('slide-out');
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % texts.length;
+                    element.textContent = texts[currentIndex];
+                    element.classList.remove('slide-out');
+                    element.classList.add('slide-in');
+                    setTimeout(() => {
+                        element.classList.remove('slide-in');
+                    }, 500); // Match the slide-in duration
+                }, 500); // Match the slide-out duration
             }
-        });
+
+            setInterval(rotateText, 2000);
 
 
-        var typed = new Typed('#name', {
-            strings: ['PRANAB KUMAR SAHOO.'],
-            typeSpeed: 10,
-            showCursor: true,
-            onComplete: function (self) {
-                // Hide the cursor after typing is completed
-                self.cursor.style.display = 'none';
-            }
-        });
-
-
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const heading = "Portfolio."; // Change this to the desired name
-            const headingElement = document.getElementById('navbar-heading');
-            const duration = 10000; // Duration in milliseconds (10 seconds)
-            const interval = 300; // Time between each character (in milliseconds)
-            const totalCharacters = heading.length;
-            const charactersPerSecond = totalCharacters / (duration / 1000);
-
-            let index = 0;
-
-            function typeLetter() {
-                if (index < totalCharacters) {
-                    headingElement.textContent += heading[index];
-                    index++;
-                    setTimeout(typeLetter, interval); // Delay between characters
+            var typed = new Typed('#name', {
+                strings: ['PRANAB KUMAR SAHOO.'],
+                typeSpeed: 10,
+                showCursor: true,
+                onComplete: function (self) {
+                    // Hide the cursor after typing is completed
+                    self.cursor.style.display = 'none';
                 }
-            }
-
-            typeLetter();
-        });
-    </script>
+            });
 
 
-    <script>
-        const navbar = document.getElementById('navbar');
-        let lastScrollTop = 0;
-        let isScrolling;
-        let isNavbarVisible = true;
-        const navbarHeight = 100; // Height of the navbar in pixels
+        </script>
 
-        // Function to show the navbar
-        function showNavbar() {
-            navbar.classList.remove('hidden-navbar');
-            navbar.classList.add('show-navbar');
-            isNavbarVisible = true;
-        }
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const heading = "Portfolio."; // Change this to the desired name
+                const headingElement = document.getElementById('navbar-heading');
+                const duration = 10000; // Duration in milliseconds (10 seconds)
+                const interval = 300; // Time between each character (in milliseconds)
+                const totalCharacters = heading.length;
+                const charactersPerSecond = totalCharacters / (duration / 1000);
 
-        // Function to hide the navbar
-        function hideNavbar() {
-            navbar.classList.remove('show-navbar');
-            navbar.classList.add('hidden-navbar');
-            isNavbarVisible = false;
-        }
+                let index = 0;
 
-        // Handle scroll event to hide or show the navbar
-        window.addEventListener('scroll', () => {
-            if (isScrolling) clearTimeout(isScrolling);
-            isScrolling = setTimeout(() => {
-                const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                if (currentScrollTop > lastScrollTop) {
-                    // Scrolling down
-                    hideNavbar();
-                } else {
-                    // Scrolling up
-                    if (currentScrollTop < navbarHeight) {
-                        // Show navbar only if scrolled within navbarHeight from the top
-                        showNavbar();
+                function typeLetter() {
+                    if (index < totalCharacters) {
+                        headingElement.textContent += heading[index];
+                        index++;
+                        setTimeout(typeLetter, interval); // Delay between characters
                     }
                 }
 
-                lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
-            }, 100);
-        });
+                typeLetter();
+            });
+        </script>
 
-        // Show navbar when cursor is near the top
-        document.addEventListener('mousemove', (event) => {
-            if (event.clientY < 50 && !isNavbarVisible) {
-                showNavbar();
+
+        <script>
+            const navbar = document.getElementById('navbar');
+            let lastScrollTop = 0;
+            let isScrolling;
+            let isNavbarVisible = true;
+            const navbarHeight = 100; // Height of the navbar in pixels
+
+            // Function to show the navbar
+            function showNavbar() {
+                navbar.classList.remove('hidden-navbar');
+                navbar.classList.add('show-navbar');
+                isNavbarVisible = true;
             }
-        });
 
-        // Hide navbar when cursor leaves the window
-        document.addEventListener('mouseleave', () => {
-            if (window.pageYOffset > navbarHeight) {
-                hideNavbar();
+            // Function to hide the navbar
+            function hideNavbar() {
+                navbar.classList.remove('show-navbar');
+                navbar.classList.add('hidden-navbar');
+                isNavbarVisible = false;
             }
-        });
-    </script>
+
+            // Handle scroll event to hide or show the navbar
+            window.addEventListener('scroll', () => {
+                if (isScrolling) clearTimeout(isScrolling);
+                isScrolling = setTimeout(() => {
+                    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                    if (currentScrollTop > lastScrollTop) {
+                        // Scrolling down
+                        hideNavbar();
+                    } else {
+                        // Scrolling up
+                        if (currentScrollTop < navbarHeight) {
+                            // Show navbar only if scrolled within navbarHeight from the top
+                            showNavbar();
+                        }
+                    }
+
+                    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+                }, 100);
+            });
+
+            // Show navbar when cursor is near the top
+            document.addEventListener('mousemove', (event) => {
+                if (event.clientY < 50 && !isNavbarVisible) {
+                    showNavbar();
+                }
+            });
+
+            // Hide navbar when cursor leaves the window
+            document.addEventListener('mouseleave', () => {
+                if (window.pageYOffset > navbarHeight) {
+                    hideNavbar();
+                }
+            });
+        </script>
 
 
+    </div>
 </body>
 
 </html>

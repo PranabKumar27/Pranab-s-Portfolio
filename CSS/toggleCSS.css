@@ -1,0 +1,124 @@
+#centerDiv {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease, visibility ease;
+    z-index: 10;
+    background-color: #1E40AF;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    
+}
+
+
+.expanded #centerDiv {
+    opacity: 1;
+    visibility: visible;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border: 2px solid #1E40AF;
+}
+
+
+/* Hide surrounding elements initially */
+.element {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 5;
+}
+
+/* Show surrounding elements when expanded */
+.expanded .element {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Blur effect for other content */
+.blurred {
+
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+/* Button style */
+#toggleButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 20;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+/* Responsive icon sizes */
+.fa-icon {
+    font-size: 1rem;
+}
+
+@media (min-width: 640px) {
+    .fa-icon {
+        font-size: 1rem;
+    }
+}
+
+
+.button {
+    position: relative;
+    display: inline-block;
+    margin-right: -10px;
+}
+
+.button a {
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #c92918;
+    display: block;
+    position: relative;
+    padding: 10px 10px;
+    box-shadow: inset 0 1px 0 #f0f0f0, 0 10px 0 #7e1a01;
+    border-radius: 5px;
+    /* Standard property */
+}
+
+.button a:hover {
+
+    text-shadow: 0px 3px 0px #000;
+}
+
+.button a:active {
+    top: 10px;
+    background-color: #c92918;
+    box-shadow: inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+    /* Updated to standard property */
+}
+
+.button:after {
+    height: 100%;
+    width: 100%;
+    padding: 4px;
+    position: absolute;
+    bottom: -15px;
+    left: 4px;
+    z-index: -1;
+    background-color: #2B1800;
+    border-radius: 5px;
+    /* Standard property */
+}

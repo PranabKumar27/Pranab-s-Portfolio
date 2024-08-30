@@ -1,0 +1,28 @@
+@keyframes lineExpand {
+
+    0%,
+    100% {
+        width: 50px;
+    }
+
+    50% {
+        width: 250px;
+    }
+
+
+}
+
+.line {
+    color: blue;
+    border-radius: 50%;
+    animation: lineExpand 2s ease-in-out infinite;
+}
+
+.headerPages-line
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+

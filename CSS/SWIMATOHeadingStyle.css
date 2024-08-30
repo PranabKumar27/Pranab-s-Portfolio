@@ -1,0 +1,20 @@
+.animate-character {
+    text-transform: uppercase;
+            background-image: linear-gradient(90deg,
+            #26ADDD 0%,
+                    #2BB9CF 29%,
+                     #3AD5A7 67%,
+                    #3EDF9B 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 2s linear infinite;
+            display: inline-block;
+            font-size: 3rem;
+    		font-weight: bolder;
+}
