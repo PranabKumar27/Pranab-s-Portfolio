@@ -1,0 +1,27 @@
+.scroll-container {
+    width: 100%;
+    overflow: hidden; /* Hide overflow */
+    white-space: nowrap; /* Prevent line breaks */
+    box-sizing: border-box;
+    background-color: #f0f0f0; /* Optional background color */
+    padding: 10px; /* Optional padding */
+}
+.scroll-text {
+    display: inline-block;
+    padding-left: 100%; /* Start the text outside of view */
+    animation: scroll-left 10s linear infinite; /* Adjust timing as needed */
+    font-size: 24px; /* Adjust font size as needed */
+}
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%); /* Start position */
+    }
+    100% {
+        transform: translateX(-100%); /* End position */
+    }
+}
+
+/* html  */
+
+/* <div class="scroll-container">
+<div class="scroll-text">This is a scrolling heading that moves from right to left!</div>

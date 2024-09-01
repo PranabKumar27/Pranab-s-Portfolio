@@ -45,6 +45,14 @@
 
     <link rel="stylesheet" href="./CSS/SWIMATOHeadingStyle.css">
 
+    <!-- Education page style  -->
+    <link rel="stylesheet" href="./CSS/EducationCSS.css">
+
+
+    <!-- Upcoming NOtice -->
+
+    <link rel="stylesheet" href="./CSS/upcomingNotice.css">
+
     <style>
         /* developer purpose */
 
@@ -283,8 +291,9 @@
 
 <body class="bg-black text-white">
 
-    <div class="mt-64" id="load-screen-container">
-        <div id="loading-screen">
+
+    <div class="h-screen mt-[70%] md:mt-[30%] xl:mt-[20%]" id="load-screen-container">
+        <div id="loading-screen ">
             <div class="container">
                 <div class="upper">PORTFOLIO.</div>
                 <div class="lower">PORTFOLIO.</div>
@@ -292,6 +301,7 @@
             </div>
         </div>
     </div>
+
 
 
     <div id="main-content" style="display: none;">
@@ -340,13 +350,13 @@
                             src="./assets/images/ProfilePicture.png" alt="">
                     </div>
                     <div>
-                        <div class="header-text lg:ml-20  lg:mt-72 md:mt-48 md:ml-10 mt-28 ml-0 ">
+                        <div class="header-text lg:ml-20  lg:mt-72 md:mt-48 md:ml-10 xl:ml-44 mt-28 ml-0 ">
                             <h1 class="lg:text-5xl md:text-3xl text-2xl"> 👋Hello, It's Me</h1>
                             <h1 class="lg:text-6xl md:text-5xl text-3xl text-[#c92918]"><span id="name"></span></h1>
                             <h1 class="lg:text-5xl md:text-3xl text-2xl"> And I'm a <span id="rotating-text"
                                     class="text-[#1542d4] font-bold">Java Developer</span></h1>
                         </div>
-                        <div class="flex gap-4 mt-4 md:ml-10 lg:ml-20">
+                        <div class="flex gap-4 mt-4 md:ml-10 lg:ml-20 xl:ml-44">
                             <button id="triggerButton"
                                 class="hireme flex items-center px-4 py-2 bg-[#c92918] text-white font-semibold rounded-lg shadow-md hover:bg-[#ff4646]">
                                 <span class="flex items-center mb-1 ">More</span>
@@ -449,16 +459,16 @@
                     id="about-header">About Section.</h1>
                 <div class="w-1/2 h-1 bg-blue-700 mt-2 line mb-24"></div>
 
-                <div class="w-full max-w-4xl mx-auto flex flex-col md:flex-row">
+                <div class=" flex flex-col md:flex-row justify-evenly md:gap-48 gap-12">
                     <!-- Image Div -->
-                    <div class="flex-1 mb-4 md:mb-0  ">
+                    <div class="flex-1 mb-4 md:mb-0 ">
                         <img src="./assets/images/aboutpageGIF.gif" alt="Sample Image"
-                            class="w-full h-auto object-cover rounded-lg md:w-auto md:h-auto lg:w-full lg:h-full">
+                            class="w-full h-auto object-cover rounded-lg md:w-auto md:h-auto ">
                     </div>
 
                     <!-- Content Div -->
                     <div
-                        class="flex-1 flex flex-col justify-center p-4 text-white rounded-lg shadow-md md:self-auto self-center">
+                        class="flex-1 flex flex-col justify-center p-4 text-white rounded-lg shadow-md md:self-auto self-center max-w-md overflow-hidden">
                         <div>
                             <h2 class="text-3xl font-extraboldbold mb-2 text-center md:text-left whoAMI text-[#c92918]">
                                 WHO
@@ -495,7 +505,7 @@
                                 <a href="mailto:pranabkumarsahoo27@gmail.com" target="_blank">HireME</a>
                             </div>
 
-                            <div class="submit-button py-2 px-4">
+                            <div class="submit-button py-2 px-4 cursor-pointer">
                                 <a>RESUME</a>
                             </div>
                         </div>
@@ -610,30 +620,137 @@
                 <h1 class="flex justify-center mt-1 md:mt-3 text-4xl   md:text-4.5xl lg:text-5xl text-[#c92918] "
                     id="project-header">Project Section.</h1>
                 <div class="w-1/2 h-1 bg-blue-700 mt-2 line"></div>
+
                 <div class="projectDetails mt-24">
-                    <div class="flex flex-col md:flex-row bg-black rounded-lg overflow-hidden shadow-lg mb-8">
+                    <div
+                        class="flex flex-col md:flex-row bg-black rounded-lg overflow-hidden shadow-lg mb-8 justify-between md:-ml-20 md:mr-20">
                         <div
-                            class="order-1 md:order-none md:w-2/3 grid place-items-center sm:w-full md:ml-48 w-full max-w-md mx-auto bg-red rounded-3xl">
+                            class="order-1 md:order-none md:w-1/3 grid place-items-center sm:w-full md:ml-48 w-full max-w-md mx-auto bg-red rounded-3xl">
                             <img src="./assets/images/restaurant.avif" alt="Sample Image"
                                 class=" w-full h-auto bg-black rounded-xl shadow-[0px_4px_10px_rgb(247,0,32)] hover:shadow-[0px_4px_10px_rgb(2,13,232)]">
                         </div>
-                        <div class="order-2 md:order-none md:w-2/3 p-6 flex flex-col justify-center md:ml-12">
+                        <div class="order-2 md:order-none md:w-1/3 p-6 flex flex-col justify-center md:ml-36 ">
 
-                            <h1 class="text-2xl font-bold mb-4 text-center md:text-left animate-character">SWIMATO APP
+                            <h1 class="text-2xl font-bold mb-4 text-center md:text-left animate-character">SWIMATO (FOOD
+                                APP)
                             </h1>
 
                             <p class=" mb-4 text-center md:text-left">Introducing Swimato App- A sophisticated web
                                 platform developed with Spring MVC and JSP. It features distinct roles for Users,
                                 Hotels, and Admins, with MySQL managing data efficiently. HTML, CSS, and JavaScript
-                                ensure a sleek, responsive user experience.</p>
+                                ensure a sleek, responsive user experience. <span class="text-red-500">I used jsp file
+                                    instead of
+                                    html file.So directly you can't see the website. If you want the code, click the
+                                    Project link button.</span>
+                            </p>
                             <div class="w-30px h-20px flex justify-center md:justify-start">
                                 <div class="submit-button cursor-pointer">
-                                    <a>See Project &#128279</a>
+                                    <a href="https://github.com/PranabKumar27/SWIMATO " target="_blank">See Project
+                                        &#128279</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="projectDetails mt-24">
+                    <div
+                        class="flex flex-col md:flex-row bg-black rounded-lg overflow-hidden shadow-lg mb-8 justify-between md:-ml-20 md:mr-20">
+                        <div class="order-2 md:order-none md:w-1/3 p-6 flex flex-col justify-center md:ml-36 ">
+
+                            <h1 class="text-2xl font-bold mb-4 text-center md:text-left animate-character">WEATHER APP
+                            </h1>
+
+                            <p class=" mb-4 text-center md:text-left">Presenting a weather app I developed using React +
+                                VITE,
+                                integrated with a weather API for real-time updates. The app provides accurate weather
+                                details, including temperature, humidity, and forecasts, and features a dynamic wind
+                                flow animation to visualize wind patterns. Its user-friendly interface ensures a smooth
+                                experience, making it easy for users to access current weather information and
+                                understand wind conditions.</p>
+                            <div class="w-30px h-20px flex justify-center md:justify-start">
+                                <div class="submit-button cursor-pointer">
+                                    <a href="https://pranabkumar27.github.io/weather-react/" target="_blank">See Project
+                                        &#128279</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="order-1 md:order-none md:w-1/3 grid place-items-center sm:w-full md:ml-48 w-full max-w-md mx-auto bg-red rounded-3xl">
+                            <img src="./assets/images/weatheravif.avif" alt="Sample Image"
+                                class=" w-full h-auto bg-black rounded-xl shadow-[0px_4px_10px_rgb(247,0,32)] hover:shadow-[0px_4px_10px_rgb(2,13,232)]">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="projectDetails mt-24">
+                    <div
+                        class="flex flex-col md:flex-row bg-black rounded-lg overflow-hidden shadow-lg mb-8 justify-between md:-ml-20 md:mr-20">
+                        <div
+                            class="order-1 md:order-none md:w-1/3 grid place-items-center sm:w-full md:ml-48 w-full max-w-md mx-auto bg-red rounded-3xl">
+                            <img src="./assets/images/Portfolio.avif" alt="Sample Image"
+                                class=" w-full h-auto bg-black rounded-xl shadow-[0px_4px_10px_rgb(247,0,32)] hover:shadow-[0px_4px_10px_rgb(2,13,232)]">
+                        </div>
+                        <div class="order-2 md:order-none md:w-1/3 p-6 flex flex-col justify-center md:ml-36 ">
+
+                            <h1 class="text-2xl font-bold mb-4 text-center md:text-left animate-character">PERSONAL
+                                RESPONSIVE PORTFOLIO
+                            </h1>
+
+                            <p class=" mb-4 text-center md:text-left">Developed a fully responsive portfolio website
+                                using HTML, CSS, Tailwind CSS, and JavaScript. With Tailwind CSS for streamlined styling
+                                and JavaScript for interactive elements, I crafted a sleek and adaptable portfolio that
+                                delivers an optimal user experience across all devices and screen sizes. This project
+                                highlights my skills and work in a visually compelling and accessible format.</p>
+                            <div class="w-30px h-20px flex justify-center md:justify-start">
+                                <div class="submit-button cursor-pointer">
+                                    <a href="https://pranabkumar27.github.io/Pranab-s-Portfolio/" target="_blank">See
+                                        Project
+                                        &#128279</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projectDetails mt-24">
+                    <div
+                        class="flex flex-col md:flex-row bg-black rounded-lg overflow-hidden shadow-lg mb-8 justify-between md:-ml-20 md:mr-20">
+                        <div class="order-2 md:order-none md:w-1/3 p-6 flex flex-col justify-center md:ml-36 ">
+
+                            <h1 class="text-2xl font-bold mb-4 text-center md:text-left animate-character">TO-DO-LIST
+                            </h1>
+
+                            <p class=" mb-4 text-center md:text-left">Working on a to-do list application using React.
+                                The project focuses on creating an intuitive interface for managing tasks, including
+                                adding, editing, and deleting items. Emphasizing responsiveness, I am ensuring that the
+                                application performs seamlessly across different devices. This ongoing project
+                                highlights my commitment to developing practical and user-friendly task management
+                                solutions.
+                            <p class="font-extrabold text-red-500">! ON GOING !</p>
+                            </p>
+                            <div class="w-30px h-20px flex justify-center md:justify-start">
+                                <div class="submit-button cursor-pointer">
+                                    <a href="#main-content">See Project &#128279</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="order-1 md:order-none md:w-1/3 grid place-items-center sm:w-full md:ml-48 w-full max-w-md mx-auto bg-red rounded-3xl">
+                            <img src="./assets/images/weatheravif.avif" alt="Sample Image"
+                                class=" w-full h-auto bg-black rounded-xl shadow-[0px_4px_10px_rgb(247,0,32)] hover:shadow-[0px_4px_10px_rgb(2,13,232)]">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="w-auto bg-red-500  rounded-xl my-12 mx-48">
+                <h1 class="text-white text-center text-2xl ">🚀 Upcoming: A full-stack project leveraging Spring
+                    Boot,
+                    React, and
+                    MySQL to
+                    deliver a robust web application solution. 🌟</h1>
             </div>
         </section>
 
@@ -641,7 +758,122 @@
             <div class="headerPages-line">
                 <h1 class="flex justify-center mt-1 md:mt-3 text-4xl   md:text-4.5xl lg:text-5xl text-[#c92918] "
                     id="education-header">Education Section.</h1>
-                <div class="w-1/2 h-1 bg-blue-700 mt-2 line"></div>
+                <div class="w-1/2 h-1 bg-blue-700 mt-2 line mb-12"></div>
+                <div class="bg-black md:ml-28 xl:-ml-1 2xl:-ml-24 ">
+                    <div class="w-full flex flex-col align-middle justify-center">
+
+
+
+                        <div
+                            class="bg-white mx-[80px] mb-[50px] h-[1050px] w-[3px] items-center justify-center rounded-[50px] sm:mx-[250px] lg:mx-[450px] xl:ml-[650px] 2xl:ml-[750px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                class="bi bi-check-circle-fill text-[#020DE8] bg-white rounded-full -mx-[15px] transition-transform duration-1000 hover:scale-150"
+                                viewBox="0 0 16 16 ">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            <div
+                                class="bg-[#21212e] inline-block h-[180px] w-[260px] mx-[30px] mt-[10px] rounded-[10px] shadow-[0px_4px_10px_rgb(247,0,32)] hover:shadow-[0px_4px_10px_rgb(2,13,232)]">
+                                <div
+                                    class="bg-[#020DE8]  h-[25px] w-[100px] rounded-full mx-[20px] mt-[15px] animate-expand">
+                                    <p class="text-[15px] text-white text-center py-[2px]">2008-2018</p>
+                                </div>
+                                <div class="mx-[30px] mt-[20px]">
+                                    <p class="text-white text-center mt-[2px]">Completed my <span
+                                            class="text-[#020DE8] text-xl font-semibold">10th grade</span> in this span
+                                        of
+                                        time from Somanath Dev BidyaPith Haripur.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-check-circle-fill text-[#020DE8] bg-white rounded-full mx-[65px] -mt-[845px] sm:mx-[235px] lg:mx-[435px] xl:mx-[635px] 2xl:ml-[735px] transition-transform duration-1000 hover:scale-150"
+                            viewBox="0 0 16 16 ">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                        </svg>
+                        <div
+                            class="bg-[#21212e] inline-block h-[180px] w-[260px] ml-[110px] mt-[10px] rounded-[10px] sm:ml-[280px] lg:ml-[160px] xl:ml-[360px] 2xl:ml-[460px] hover:shadow-[0px_4px_10px_rgb(247,0,32)] shadow-[0px_4px_10px_rgb(2,13,232)]">
+                            <div
+                                class="bg-[#020DE8] h-[25px] w-[100px] rounded-full mx-[20px] mt-[15px] animate-expand">
+                                <p class="text-[15px] text-white text-center py-[2px]">2018-2020</p>
+                            </div>
+                            <div class="mx-[30px] mt-[20px]">
+                                <p class="text-white text-center mt-[2px]">Completed <span
+                                        class="text-[#020DE8] text-xl font-bold">12th grade</span> at Nayagarh H S
+                                    School NAYAGARH, specializing in <span
+                                        class="text-[#020DE8] text-xl font-semibold">PCMIT</span>.
+                                </p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-check-circle-fill text-[#020DE8] bg-white rounded-full mx-[65px] mt-[25px] sm:mx-[235px] lg:mx-[435px] xl:mx-[635px] 2xl:ml-[735px] transition-transform duration-1000 hover:scale-150"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                        </svg>
+                        <div
+                            class="bg-[#21212e] inline-block h-[180px] w-[260px] ml-[110px] mt-[10px] rounded-[10px] sm:ml-[280px] lg:ml-[480px] xl:ml-[680px] 2xl:ml-[780px] shadow-[0px_4px_10px_rgb(247,0,32)] hover:shadow-[0px_4px_10px_rgb(2,13,232)]">
+                            <div
+                                class="bg-[#020DE8] h-[25px] w-[100px] rounded-full mx-[20px] mt-[15px] animate-expand">
+                                <p class="text-[15px] text-white text-center py-[2px]">2020-2022</p>
+                            </div>
+                            <div class="mx-[30px] mt-[20px]">
+                                <p class="text-white text-center mt-[2px]">
+                                    Completed and certified in <span
+                                        class="text-[#020DE8] text-xl font-semibold">PGDCA</span> , specializing in
+                                    essential computer skills and software.
+                                </p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-check-circle-fill text-[#020DE8] bg-white rounded-full mx-[65px] mt-[25px] sm:mx-[235px] lg:mx-[435px] xl:mx-[635px] 2xl:ml-[735px] transition-transform duration-1000 hover:scale-150"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                        </svg>
+                        <div
+                            class="bg-[#21212e] inline-block h-[180px] w-[260px] ml-[110px] mt-[10px] rounded-[10px] sm:ml-[280px] lg:ml-[160px] xl:ml-[360px] 2xl:ml-[460px] hover:shadow-[0px_4px_10px_rgb(247,0,32)] shadow-[0px_4px_10px_rgb(2,13,232)]">
+                            <div
+                                class="bg-[#020DE8] h-[25px] w-[100px] rounded-full mx-[20px] mt-[15px] animate-expand">
+                                <p class="text-[15px] text-white text-center py-[2px]">2021-2022</p>
+                            </div>
+                            <div class="mx-[30px] mt-[20px]">
+                                <p class="text-white text-center -mt-[7px]"><span
+                                        class="text-[#020DE8] text-xl font-semibold"><span
+                                            class="text-[#020DE8] text-xl font-semibold">Graduated</span></span> in
+                                    Computer Science from Utkal University with a <span
+                                        class="text-[#020DE8] text-xl font-semibold">9.49</span> CGPA.</p>
+                            </div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                            class="bi bi-check-circle-fill text-[#020DE8] bg-white rounded-full mx-[65px] mt-[25px] sm:mx-[235px] lg:mx-[435px] xl:mx-[635px] 2xl:ml-[735px] transition-transform duration-1000 hover:scale-150"
+                            viewBox="0 0 16 16">
+                            <path
+                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                        </svg>
+                        <div
+                            class="bg-[#21212e] inline-block h-[180px] w-[260px] ml-[110px] mt-[10px] rounded-[10px] sm:ml-[280px] lg:ml-[480px] lg:mb-[40px] xl:ml-[680px] 2xl:ml-[780px] shadow-[0px_4px_10px_rgb(247,0,32)] hover:shadow-[0px_4px_10px_rgb(2,13,232)]">
+                            <div class=""></div>
+                            <div
+                                class="bg-[#C92918] h-[25px] w-[100px] rounded-full mx-[20px] mt-[15px]  animate-expand">
+                                <p class="text-[15px] text-white text-center py-[2px]">Currently</p>
+                            </div>
+                            <div class="bg-[#020DE8] h-[10px] w-[10px] rounded-full mx-[200px] -mt-[20px] animate-ping">
+                            </div>
+                            <div class="bg-[#020DE8] h-[10px] w-[10px] rounded-full mx-[200px] -mt-[10px]"></div>
+                            <div class="mx-[30px] mt-[30px]">
+                                <p class="text-white text-center -mt-[7px]">Certified in <span
+                                        class="text-[#020DE8] text-xl font-semibold">Java Full-Stack </span>from
+                                    JSPIDER ;
+                                    enhancing skills
+                                    and seeking relevant job opportunities.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </section>
 
