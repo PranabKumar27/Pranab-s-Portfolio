@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="copyright" content="Pranab Kumar">
+    <meta name="author" content="Pranab Kumar">
 
-    <link rel="stylesheet" href="output.css">
+    <title> Portfolio</title>
+    <link rel="icon" href="./assets/icons/Picon.png">
+
+    <link rel=" stylesheet" href="output.css">
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Toogle Element Icons -->
@@ -292,6 +296,7 @@
 <body class="bg-black text-white">
 
 
+
     <div class="h-screen mt-[70%] md:mt-[30%] xl:mt-[20%]" id="load-screen-container">
         <div id="loading-screen ">
             <div class="container">
@@ -309,8 +314,9 @@
             <header id="navbar"
                 class="fixed w-full z-20 bg-transparent  flex items-center justify-between m-4 md:mt-5  transition-transform ease-in-out show-navbar">
 
-                <h1 class=" mt-1 md:mt-3 text-4xl   md:text-4.5xl lg:text-5xl text-[#c92918]" id="navbar-heading">
-                </h1>
+                <a class=" mt-1 md:mt-3 text-4xl   md:text-4.5xl lg:text-5xl text-[#c92918] cursor-pointer"
+                    id="navbar-heading" href="#main-content">
+                </a>
                 <div class=" flex gap-8 mr-8 md:mr-10 mt-3 text-[#c3b9b0] ">
 
 
@@ -338,10 +344,10 @@
 
                 </div>
             </header>
-            <video autoplay muted loop preload="auto" class="absolute  h-full w-full  object-cover -z-10">
-                <source src="./assets/background/mainbackgroundfile.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <image src="./assets/background/bits.gif" class="absolute  md:h-full w-full  object-cover -z-10 h-screen"
+                style="filter: blur(3px) ">
+
+            </image>
 
             <div class="relative flex mt-10 justify-between">
                 <div id="photo-text" class="flex  mt-auto md:-ml-10  -ml-16 ">
@@ -353,8 +359,9 @@
                         <div class="header-text lg:ml-20  lg:mt-72 md:mt-48 md:ml-10 xl:ml-44 mt-28 ml-0 ">
                             <h1 class="lg:text-5xl md:text-3xl text-2xl"> 👋Hello, It's Me</h1>
                             <h1 class="lg:text-6xl md:text-5xl text-3xl text-[#c92918]"><span id="name"></span></h1>
-                            <h1 class="lg:text-5xl md:text-3xl text-2xl"> And I'm a <span id="rotating-text"
-                                    class="text-[#1542d4] font-bold">Java Developer</span></h1>
+                            <h1 class="lg:text-5xl md:text-3xl text-2xl"> And I'm a </h1>
+                            <span id="rotating-text"
+                                class="text-[#1542d4] font-bold lg:text-5xl md:text-3xl text-2xl">Java Developer</span>
                         </div>
                         <div class="flex gap-4 mt-4 md:ml-10 lg:ml-20 xl:ml-44">
                             <button id="triggerButton"
@@ -431,7 +438,7 @@
                 </a>
                 <a href="#section3"
                     class="element w-12 h-12 bg-[#c92918] rounded-full flex items-center justify-center " data-info="3">
-                    <i class="fas fa-user fa-icon"></i> <!-- About icon -->
+                    <i class="fa-solid fa-address-card"></i><!-- About icon -->
                 </a>
                 <a href="#section5"
                     class="element w-12 h-12 bg-[#c92918] rounded-full flex items-center justify-center " data-info="5">
@@ -439,7 +446,7 @@
                 </a>
                 <a href="#section6"
                     class="element w-12 h-12 bg-[#c92918] rounded-full flex items-center justify-center " data-info="5">
-                    <i class="fas fa-graduation-cap fa-icon"></i> <!-- Education icon -->
+                    <i class="fa-solid fa-message "></i> <!-- Education icon -->
                 </a>
             </div>
         </div>
@@ -880,12 +887,12 @@
         <!-- contactMe Form JavaScript -->
         <section class="bg-black py-8 px-4" id="section6">
             <div class=" max-w-2xl mx-auto  p-6 rounded-lg shadow-md">
-                <div class="headerPages-line">
+                <div class="headerPages-line ">
                     <h1 class="flex justify-center mt-1 md:mt-3 text-4xl   md:text-4.5xl lg:text-5xl text-[#c92918] "
                         id="skill-header">Contact ME!</h1>
-                    <div class="w-1/2 h-1 bg-blue-700 mt-2 line"></div>
+                    <div class="w-1/2 h-1 bg-blue-700 mt-2 line "></div>
                 </div>
-                <form method="post" name="contact-form">
+                <form method="post" name="contact-form" class="mt-12">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
                             <label for="name" class="block text-white font-bold">Name</label>
@@ -924,7 +931,18 @@
             </div>
         </section>
 
+        <section class="footer bg-white w-full h-16 text-black flex flex-col -mb-10">
+            <div class="flex justify-evenly  h-10">
+                <p class="font-bold ">&copy; <span id="year"></span> Pranab Kumar. All rights reserved.</p>
 
+            </div>
+            <div class="text-center font-bold">
+                <h1>THANK YOU FOR VISIT MY PAGE.</h1>
+            </div>
+        </section>
+
+        <!-- for footer  -->
+        <script src="./JS/footerForCurrentYear.js"></script>
 
         <script src="./JS/ContactMe.js"></script>
 
@@ -936,121 +954,12 @@
 
         <script src="./JS/BeforePage.js"></script>
 
-        <!-- Setup and start animation! -->
-        <script>
-            const texts = ["Java Developer.", "React Developer.", "Fullstack Developer.", "Web Developer."];
-            const element = document.getElementById("rotating-text");
-            let currentIndex = 0;
+        <script src="./JS/HeaderPageProfessionAnimation.js"></script>
 
-            function rotateText() {
-                element.classList.add('slide-out');
-                setTimeout(() => {
-                    currentIndex = (currentIndex + 1) % texts.length;
-                    element.textContent = texts[currentIndex];
-                    element.classList.remove('slide-out');
-                    element.classList.add('slide-in');
-                    setTimeout(() => {
-                        element.classList.remove('slide-in');
-                    }, 500); // Match the slide-in duration
-                }, 500); // Match the slide-out duration
-            }
-
-            setInterval(rotateText, 2000);
+        <script src="./JS/NavbarHeader.js"></script>
 
 
-            var typed = new Typed('#name', {
-                strings: ['PRANAB KUMAR SAHOO.'],
-                typeSpeed: 10,
-                showCursor: true,
-                onComplete: function (self) {
-                    // Hide the cursor after typing is completed
-                    self.cursor.style.display = 'none';
-                }
-            });
-
-
-        </script>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const heading = "Portfolio."; // Change this to the desired name
-                const headingElement = document.getElementById('navbar-heading');
-                const duration = 10000; // Duration in milliseconds (10 seconds)
-                const interval = 300; // Time between each character (in milliseconds)
-                const totalCharacters = heading.length;
-                const charactersPerSecond = totalCharacters / (duration / 1000);
-
-                let index = 0;
-
-                function typeLetter() {
-                    if (index < totalCharacters) {
-                        headingElement.textContent += heading[index];
-                        index++;
-                        setTimeout(typeLetter, interval); // Delay between characters
-                    }
-                }
-
-                typeLetter();
-            });
-        </script>
-
-
-        <script>
-            const navbar = document.getElementById('navbar');
-            let lastScrollTop = 0;
-            let isScrolling;
-            let isNavbarVisible = true;
-            const navbarHeight = 100; // Height of the navbar in pixels
-
-            // Function to show the navbar
-            function showNavbar() {
-                navbar.classList.remove('hidden-navbar');
-                navbar.classList.add('show-navbar');
-                isNavbarVisible = true;
-            }
-
-            // Function to hide the navbar
-            function hideNavbar() {
-                navbar.classList.remove('show-navbar');
-                navbar.classList.add('hidden-navbar');
-                isNavbarVisible = false;
-            }
-
-            // Handle scroll event to hide or show the navbar
-            window.addEventListener('scroll', () => {
-                if (isScrolling) clearTimeout(isScrolling);
-                isScrolling = setTimeout(() => {
-                    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                    if (currentScrollTop > lastScrollTop) {
-                        // Scrolling down
-                        hideNavbar();
-                    } else {
-                        // Scrolling up
-                        if (currentScrollTop < navbarHeight) {
-                            // Show navbar only if scrolled within navbarHeight from the top
-                            showNavbar();
-                        }
-                    }
-
-                    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
-                }, 100);
-            });
-
-            // Show navbar when cursor is near the top
-            document.addEventListener('mousemove', (event) => {
-                if (event.clientY < 50 && !isNavbarVisible) {
-                    showNavbar();
-                }
-            });
-
-            // Hide navbar when cursor leaves the window
-            document.addEventListener('mouseleave', () => {
-                if (window.pageYOffset > navbarHeight) {
-                    hideNavbar();
-                }
-            });
-        </script>
+        <script src="./JS/HiddenNavbar.js"> </script>
 
 
     </div>
