@@ -1,3 +1,4 @@
+![Screenshot 2025-04-15 145130](https://github.com/user-attachments/assets/9bdf1e29-43b2-4eb9-9f5f-fbbfda0edf12)
 # 🚀 Hey, I'm Pranab — Java Developer | Web Enthusiast | 2023 Graduate
 
 Welcome to my portfolio — a curated collection of projects, code, and ideas that reflect my journey as a passionate developer.
